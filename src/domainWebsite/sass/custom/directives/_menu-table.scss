@@ -1,0 +1,26 @@
+.menu-table {
+    width:100%;
+    table-layout: fixed;
+    span {
+        color: white;
+    }
+    th, tr {
+        border-style: solid;
+        border-bottom-width: 2px;
+        border-bottom-color: black;
+        border-left-width: 2px;
+        border-left-color: black;
+    }
+}
+
+.padding15 {
+    padding: 15px;
+}
+
+.center-header {
+    text-align: center;
+}
+
+.menu-table-header {
+    color: white;
+}

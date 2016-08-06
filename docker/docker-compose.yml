@@ -1,0 +1,27 @@
+version: '2'
+
+services:
+  db:
+    image: mongo
+    volumes:
+      - data:/data/db
+  rest:
+    image: tquinlan1992/qa_company_management${TAG}
+    environment:
+        MONGO_URL: db
+        DOMAIN: ${DOMAIN}
+        ADMIN_PORTAL_PORT: ${ADMIN_PORTAL_PORT}
+    ports:
+      - "3000:3000"
+    links:
+      - db
+  adminPortal:
+    image: tquinlan1992/qa_company_management:${TAG}
+    command: runAdminPortal
+    ports:
+      - "80:8000"
+    links:
+      - rest
+
+volumes:
+  data: {}

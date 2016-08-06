@@ -1,0 +1,13 @@
+  <md-content>
+    <md-list>
+      <md-list-item class="md-3-line" ng-repeat="product in products">
+        <div class="md-list-item-text padding15">
+          <h3><a> {{product.name}} </a></h3>
+          <h4>{{product.description}}</h4>
+          <p>{{product.kind}}</p>
+        </div>
+        <md-button id="{{('productEditButton' + product.kind + $index).replace(' ','')}}" class="md-raised md-primary" ng-click="editProduct(('#productEditButton' + product.kind + $index).replace(' ','') , product)">Edit</md-button>
+        <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+    </md-list>
+  </md-content>

@@ -1,0 +1,28 @@
+<div layout="column" layout-fill>
+    <md-toolbar layout-align="center center">
+        <div class="md-toolbar-tools">
+            <h1>Products</h1>
+        </div>
+    </md-toolbar>
+
+    <md-content flex>
+        <md-tabs md-dynamic-height md-border-bottom md-center-tabs="true">
+            <md-tab label="menu">
+                <md-content>
+                    <div layout="column" layout-align="center center">
+                        <md-button id="addEditProduct" ng-click="addEditProduct('#addEditProduct')" class="md-raised md-primary">ADD A Product
+                        </md-button>
+                    </div>
+                    <md-tabs md-dynamic-height md-border-bottom md-center-tabs="true">
+                        <md-tab label="Products">
+                            <md-content>
+                                <shared-product-table products="products" get-products="getProducts()">
+                                </shared-product-table>
+                            </md-content>
+                        </md-tab>
+                    </md-tabs>
+                </md-content>
+            </md-tab>
+        </md-tabs>
+    </md-content>
+</div>

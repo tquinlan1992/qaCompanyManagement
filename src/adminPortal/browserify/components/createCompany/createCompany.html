@@ -1,0 +1,42 @@
+<form name="form" ng-submit="createCompany()">
+    <md-input-container>
+        <label>First Name</label>
+        <input name="firstName" ng-model="user.firstName" required>
+        <div ng-messages="form.firstName.$error" ng-show="form.firstName.$touched && !user.firstName">
+            <div ng-message="required">This is required.</div>
+        </div>
+    </md-input-container>
+    <md-input-container>
+        <label>Last Name</label>
+        <input name="lastName" ng-model="user.lastName" required>
+        <div ng-messages="form.lastName.$error" ng-show="form.lastName.$touched && !user.lastName">
+            <div ng-message="required">This is required.</div>
+        </div>
+    </md-input-container>
+    <md-input-container>
+        <label>Subdomain</label>
+        <input name="subdomain" ng-model="user.subdomain" required>
+        <div ng-messages="form.subdomain.$error" ng-show="form.subdomain.$touched && !user.subdomain">
+            <div ng-message="required">This is required.</div>
+        </div>
+    </md-input-container>
+    <md-input-container>
+        <label>Email</label>
+        <input name="email" ng-model="user.email" required>
+        <div ng-messages="form.email.$error" ng-show="form.email.$touched && !user.email">
+            <div ng-message="required">This is required.</div>
+        </div>
+    </md-input-container>
+    <md-input-container>
+        <label>Password</label>
+        <input type="password" name="password" ng-model="user.password" required>
+        <div ng-messages="form.password.$error" ng-show="form.password.$touched && !user.password">
+            <div ng-message="required">This is required.</div>
+        </div>
+    </md-input-container>
+    <br>
+    <div flex layout="row" layout-align="center center">
+        <md-button class="md-raised md-primary" type="submit">Create User</md-button>
+        <a ui-sref="credentials.login"> <md-button class="md-raised md-primary">Login</md-button> </a>
+    </div>
+</form>

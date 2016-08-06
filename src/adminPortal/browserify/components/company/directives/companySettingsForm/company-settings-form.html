@@ -1,0 +1,17 @@
+<form name="form" ng-submit="saveAccount()">
+    <div flex layout="row" layout-align="center center">
+
+        <div flex class="md-padding">
+            <md-input-container class="md-block">
+                <label>Admin Portal Subdomain</label>
+                <input name="subdomain" ng-model="account.subdomain" md-maxlength="50" required>
+                <div ng-messages="form.subdomain.$error" ng-show="form.subdomain.$touched && !account.subdomain">
+                    <div ng-message="required">This is required.</div>
+                </div>
+            </md-input-container>
+        </div>
+    </div>
+    <div flex layout="row">
+        <md-button class="md-raised md-primary" md-select-on-focus type="submit">Save</md-button>
+    </div>
+</form>

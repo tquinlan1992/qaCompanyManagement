@@ -1,0 +1,38 @@
+<form name="form" ng-submit="saveAccount()">
+    <div flex layout="row" layout-align="center center">
+
+        <div flex class="md-padding">
+            <md-input-container class="md-block">
+                <label>Email</label>
+                <input name="email" ng-model="account.email" md-maxlength="50" required>
+                <div ng-messages="form.email.$error" ng-show="form.email.$touched && !account.email">
+                    <div ng-message="required">This is required.</div>
+                </div>
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Password</label>
+                <input name="password" ng-model="account.password" md-maxlength="50" required>
+                <div ng-messages="form.password.$error" ng-show="form.password.$touched && !account.password">
+                    <div ng-message="required">This is required.</div>
+                </div>
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>First Name</label>
+                <input name="firstName" ng-model="account.firstName" md-maxlength="50" required>
+                <div ng-messages="form.firstName.$error" ng-show="form.firstName.$touched && !account.firstName">
+                    <div ng-message="required">This is required.</div>
+                </div>
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Last Name</label>
+                <input name="lastName" ng-model="account.lastName" md-maxlength="50" required>
+                <div ng-messages="form.lastName.$error" ng-show="form.lastName.$touched && !account.lastName">
+                    <div ng-message="required">This is required.</div>
+                </div>
+            </md-input-container>
+        </div>
+    </div>
+    <div flex layout="row">
+        <md-button class="md-raised md-primary" md-select-on-focus type="submit">Save</md-button>
+    </div>
+</form>

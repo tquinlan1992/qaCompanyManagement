@@ -1,0 +1,14 @@
+<div layout="column" layout-fill>
+    <md-toolbar layout-align="center center">
+        <div class="md-toolbar-tools">
+            <h1>Users</h1>
+        </div>
+    </md-toolbar>
+    <md-content flex>
+        <md-button id="addUser" ng-click="addUser('#addUser')" class="md-raised md-primary">
+            ADD A USER
+        </md-button>
+        <components-users-users-table get-users="getUsers()" users="users"/>
+        </components-users-users-table>
+    </md-content>
+</div>

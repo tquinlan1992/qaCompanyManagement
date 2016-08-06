@@ -1,0 +1,54 @@
+<md-dialog flex>
+    <md-toolbar style="height:5px; padding-left: 10px;" layout-align="center">
+        <h2>Add a new product</h2>
+    </md-toolbar>
+        <form name="addEditProductForm" ng-submit="addEditProduct()">
+            <md-dialog-content class="md-padding">
+            <div flex layout="row" layout-align="center center">
+
+                <div flex>
+                    <md-tabs md-dynamic-height md-border-bottom md-center-tabs="true">
+                        <md-tab label="Product">
+                            <md-input-container class="md-block">
+                                <label>Product Name</label>
+                                <input name="name" ng-model="product.name" md-maxlength="50" required>
+                                <div ng-messages="addEditProductForm.name.$error" ng-show="addEditProductForm.name.$touched && !product.name">
+                                    <div ng-message="required">This is required.</div>
+                                </div>
+                            </md-input-container>
+
+                            <md-input-container class="md-block">
+                                <label>Product Description</label>
+                                <textarea name="description" ng-model="product.description" md-maxlength="150" rows="3" style="height: 120px;" md-select-on-focus>
+                                </textarea>
+                            </md-input-container>
+                            <md-checkbox ng-if="productKinds.length && !newKindDisabled" ng-model="kind.newKindChecked">
+                                New Kind
+                            </md-checkbox>
+                            <md-input-container class="md-block" ng-if="productKinds.length && !kind.newKindChecked">
+                                <md-select ng-disabled="newKindDisabled" ng-model="product.kind" placeholder="Select a Kind">
+                                    <md-option ng-value="kind" ng-repeat="kind in productKinds">{{kind}}</md-option>
+                                </md-select>
+                            </md-input-container>
+                            <md-input-container class="md-block" ng-if="!productKinds.length || kind.newKindChecked">
+                                <label>Kind</label>
+                                <input type="text" ng-model="product.kind" name="name" md-maxlength="50">
+                            </md-input-container>
+
+                        </md-tab>
+                        <md-tab label="Locations">
+                            <h3> Locations </h3>
+                            <shared-tom-checkboxes data="{items: checkboxStores, name: 'name', id: '_id'}" checked-boxes="product.stores">
+                            </shared-tom-checkboxes>
+                        </md-tab>
+                    </md-tabs>
+                </div>
+            </div>
+            </md-dialog-content>
+            <md-dialog-actions layout="row">
+                <md-button class="md-raised md-primary" md-select-on-focus type="submit">Add product</md-button>
+                <md-button class="md-raised md-primary" ng-click="cancel()">Cancel</md-button>
+                <span flex></span>
+            </md-dialog-actions>
+        </form>
+</md-dialog>

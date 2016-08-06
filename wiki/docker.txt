@@ -1,0 +1,16 @@
+// To build docker image for project
+
+docker build format
+    - "docker build -t <name of docker image>:<docker tag> .""
+
+working example command to build docker image for project. Run this command at the root of the folder
+    -"docker build -t qa_company_management:develop ."
+
+// To start a mongo instance
+docker run --name some-mongo -d mongo
+
+// To Run API server in docker
+docker run --name <name of docker image> -p 3000:3000 -e MONGO_URL=<mongo ip address> -e DOMAIN=<domain of client> ADMIN_PORTAL_PORT=<port api server is running on> -it qa_company_management/develop
+
+// To Run admin portal in docker
+docker run --name <name of docker image> run -p 80:8000 -it qa_company_management:develop runAdminPortal

@@ -1,0 +1,3 @@
+// Use this page if you have already gone through the set up via "SetupDevelopmentEnvironment.txt"
+
+run "npm run develop-environment" to start necearry servers and watchers for front end compilers

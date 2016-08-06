@@ -1,0 +1,9 @@
+<md-checkbox aria-label="Select All" ng-checked="isChecked('all')" md-indeterminate="!!checkedBoxes.length && !isChecked('all')" ng-click="toggleAll()">
+    Toggle
+</md-checkbox>
+
+<div class="padding-left-30" flex="100" ng-repeat="item in data.items">
+    <md-checkbox ng-checked="isChecked(item)" ng-click="checkClick(item)" aria-label="Checkbox 1">
+        {{item[data.name]}}
+    </md-checkbox>
+</div>

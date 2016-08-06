@@ -1,0 +1,32 @@
+<div layout="column" layout-fill>
+    <md-toolbar layout-align="center center">
+        <div class="md-toolbar-tools">
+            <h1>{{store.name}}</h1>
+        </div>
+    </md-toolbar>
+
+    <md-content flex layout="column" layout-align="center center">
+        <h3>{{store.address.street}}</h3>
+        <h3>{{store.address.city}}</h3>
+        <h3>{{store.address.state}}</h3>
+    </md-content>
+
+    <div layout="column" layout-align="center center">
+        <md-button id="addStore" ng-click="editStore('#addStore')" class="md-raised md-primary">Edit STORE
+        </md-button>
+
+    </div>
+
+    <md-content flex>
+        <md-tabs md-dynamic-height md-border-bottom md-center-tabs="true">
+            <md-tab label="menu">
+                <md-content>
+                    <shared-product-table products="store.menu">
+                    </shared-product-table>
+                </md-content>
+            </md-tab>
+            <md-tab label="settings">
+            </md-tab>
+        </md-tabs>
+    </md-content>
+</div>

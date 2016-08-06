@@ -1,0 +1,12 @@
+<md-list>
+  <md-list-item class="md-3-line" ng-repeat="user in users">
+    <div class="md-list-item-text padding15">
+      <h3><a> {{user.firstName}} </a></h3>
+      <h3><a> {{user.lastName}} </a></h3>
+      <h3><a> {{user.email}} </a></h3>
+      <h3>{{user.permission}}</h3>
+    </div>
+    <md-button id="{{('userEditButton' + $index).replace(' ','')}}" class="md-raised md-primary" ng-click="editUser(('#userEditButton' + $index).replace(' ','') , user)">Edit</md-button>
+    <md-divider ng-if="!$last"></md-divider>
+  </md-list-item>
+</md-list>

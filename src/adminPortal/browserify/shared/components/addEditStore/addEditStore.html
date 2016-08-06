@@ -1,0 +1,43 @@
+<md-dialog flex>
+    <form name="addStoreForm" ng-submit="addStore()">
+        <div flex layout="row" layout-align="center center">
+
+            <div flex class="md-padding">
+                <span class="md-headline">Add a Store</span><br>
+                <md-input-container>
+                    <label>Store Name</label>
+                    <input type="text" name="name" ng-model="store.name" required>
+                    <div ng-messages="addStoreForm.name.$error" ng-show="addStoreForm.name.$touched && !store.name">
+                        <div ng-message="required">This is required.</div>
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <label>Address</label>
+                    <input type="text" name="street" ng-model="store.address.street" required>
+                    <div ng-messages="addStoreForm.street.$error" ng-show="addStoreForm.street.$touched && !store.address.street">
+                        <div ng-message="required">This is required.</div>
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <label>City</label>
+                    <input type="text" name="city" ng-model="store.address.city" required>
+                    <div ng-messages="addStoreForm.city.$error" ng-show="addStoreForm.city.$touched && !store.address.city">
+                        <div ng-message="required">This is required.</div>
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <label>State</label>
+                    <input type="text" name="state" ng-model="store.address.state" required>
+                    <div ng-messages="addStoreForm.state.$error" ng-show="addStoreForm.state.$touched && !store.address.state">
+                        <div ng-message="required">This is required.</div>
+                    </div>
+                </md-input-container>
+
+            </div>
+        </div>
+        <div flex layout="row">
+        <md-button class="md-raised md-primary" type="submit">Create Store</md-button>
+        <md-button class="md-raised md-primary" ng-click="cancel()">Cancel</md-button>
+    </div>
+    </form>
+</md-dialog>

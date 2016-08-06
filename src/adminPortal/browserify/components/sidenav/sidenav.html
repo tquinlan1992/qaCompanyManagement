@@ -1,0 +1,26 @@
+<md-sidenav md-scroll-shrink class="site-sidenav md-sidenav-left md-whiteframe-z2 border-right-gray" md-component-id="left" ng-click="ul.toggleList()" aria-label="Show User List" md-is-locked-open="$mdMedia('gt-sm')">
+
+    <div layout="row" layout-align="center center">
+        <img src="images/logo_qa.png" id="sideNavImg"></img>
+    </div>
+    <md-content>
+        <md-list>
+            <md-divider></md-divider>
+            <div ng-repeat="menuItem in menuItems" ui-sref-active="active-menu-item" ui-sref="{{menuItem.state}}">
+                <md-list-item md-ink-ripple="#00D036" class="md-clickable md-primary">
+                    <span>{{menuItem.text}}</span>
+                </md-list-item>
+                <md-divider></md-divider>
+            </div>
+
+
+            <md-list-item md-ink-ripple class="md-clickable" ng-click="logout()">
+                <span>Logout</span>
+            </md-list-item>
+            <md-divider></md-divider>
+        </md-list>
+
+    </md-content>
+
+
+</md-sidenav>

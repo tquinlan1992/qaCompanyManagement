@@ -1,0 +1,27 @@
+<form name="form" ng-submit="login()">
+    <md-input-container>
+        <label>Email</label>
+        <input name="email" ng-model="loginCredentials.email" required>
+        <div ng-messages="form.email.$error" ng-show="form.email.$touched && !loginCredentials.email">
+            <div ng-message="required">This is required.</div>
+        </div>
+    </md-input-container>
+    <md-input-container>
+        <label>Password</label>
+        <input type="password" name="password" ng-model="loginCredentials.password" required>
+        <div ng-messages="form.password.$error" ng-show="form.password.$touched && !loginCredentials.password">
+            <div ng-message="required">This is required.</div>
+        </div>
+    </md-input-container>
+    <md-input-container ng-if="!subdomain">
+        <label>Subdomain</label>
+        <input name="subdomain" ng-model="loginCredentials.subdomain" required>
+        <div ng-messages="form.subdomain.$error" ng-show="form.subdomain.$touched && !loginCredentials.subdomain">
+            <div ng-message="required">This is required.</div>
+        </div>
+    </md-input-container> <br>
+    <div flex layout="row" layout-align="center center">
+        <md-button class="md-raised md-primary" type="submit">Login</md-button>
+        <a ui-sref="credentials.createCompany"> <md-button class="md-raised md-primary">Create User</md-button> </a>
+    </div>
+</form>

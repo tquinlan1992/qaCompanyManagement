@@ -1,0 +1,17 @@
+md-sidenav > md-list {
+    height:100%;
+}
+
+md-sidenav {
+    height: 100vh;
+}
+.active-menu-item {
+    background-color: $QAColor;
+}
+
+
+#sideNavImg {
+    height: 140px;
+    padding-top:10px;
+    width:auto;
+}
